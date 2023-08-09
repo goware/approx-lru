@@ -3,7 +3,7 @@ package lru
 import (
 	"sync"
 
-	"github.com/bpowers/approx-lru/internal/approxlru"
+	"github.com/goware/approx-lru/internal/approxlru"
 )
 
 // Cache is a thread-safe fixed size LRU cache.

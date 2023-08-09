@@ -220,8 +220,14 @@ func (c *LRU[K, V]) Resize(size int) (evicted int) {
 
 	// sort in descending order, and update the items map to point at the
 	// updated entry indexes
-	slices.SortFunc(c.data, func(a, b entry[K, V]) bool {
-		return a.lastUsed > b.lastUsed
+	slices.SortFunc(c.data, func(a, b entry[K, V]) int {
+		if a.lastUsed > b.lastUsed {
+			return -1
+		} else if a.lastUsed == b.lastUsed {
+			return 0
+		} else {
+			return 1
+		}
 	})
 
 	for i, entry := range c.data {

@@ -4,7 +4,7 @@ import (
 	"hash/maphash"
 	"sync"
 
-	"github.com/bpowers/approx-lru/internal/approxlru"
+	"github.com/goware/approx-lru/internal/approxlru"
 )
 
 const defaultShardCount = 256
